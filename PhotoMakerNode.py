@@ -84,6 +84,8 @@ class BaseModelLoader_local_Node_Zho:
             use_safetensors=True,
             variant="fp16"
         ).to(device)
+        from onediffx import compile_pipe
+        pipe = compile_pipe(pipe)
         return [pipe]
 
 
